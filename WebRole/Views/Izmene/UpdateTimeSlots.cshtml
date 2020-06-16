@@ -1,0 +1,65 @@
+﻿@model StageData.TimeSlot
+
+@{
+    ViewBag.Title = "UpdateTimeSlots";
+}
+
+<h2>UpdateTimeSlots</h2>
+
+
+<form action="~/Izmene/UpdateTimeSlot">
+    <div class="form-horizontal">
+        <h4>Add Time Slot</h4>
+
+        <label>Description:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="text" required name="Description" />
+            </div>
+
+        </div>
+        <label>From:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="datetime-local" required name="From" />
+            </div>
+
+        </div>
+        <label>To:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="datetime-local" required name="To" />
+            </div>
+
+        </div>
+        <label>Id:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="number" required name="Id" />
+            </div>
+
+        </div>
+
+        <div class="col-md-10">
+            <div class="btn">
+                <input type="submit" value="UpdateTimeSlot" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

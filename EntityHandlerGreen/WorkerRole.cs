@@ -10,7 +10,7 @@ using Microsoft.WindowsAzure.Diagnostics;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using Microsoft.WindowsAzure.Storage;
 
-namespace EntityHandlerBlue
+namespace EntityHandlerGreen
 {
     public class WorkerRole : RoleEntryPoint
     {
@@ -19,7 +19,7 @@ namespace EntityHandlerBlue
 
         public override void Run()
         {
-            Trace.TraceInformation("WorkerRole1 is running");
+            Trace.TraceInformation("EntityHandlerGreen is running");
 
             try
             {
@@ -41,21 +41,21 @@ namespace EntityHandlerBlue
 
             bool result = base.OnStart();
 
-            Trace.TraceInformation("WorkerRole1 has been started");
+            Trace.TraceInformation("EntityHandlerGreen has been started");
 
             return result;
         }
 
         public override void OnStop()
         {
-            Trace.TraceInformation("WorkerRole1 is stopping");
+            Trace.TraceInformation("EntityHandlerGreen is stopping");
 
             this.cancellationTokenSource.Cancel();
             this.runCompleteEvent.WaitOne();
 
             base.OnStop();
 
-            Trace.TraceInformation("WorkerRole1 has stopped");
+            Trace.TraceInformation("EntityHandlerGreen has stopped");
         }
 
         private async Task RunAsync(CancellationToken cancellationToken)

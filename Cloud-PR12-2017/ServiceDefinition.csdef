@@ -10,12 +10,18 @@
     </Sites>
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
+      <Setting name="DataConnectionString" />
     </ConfigurationSettings>
     <Endpoints>
       <InputEndpoint name="Endpoint1" protocol="http" port="80" />
     </Endpoints>
   </WebRole>
-  <WorkerRole name="WorkerRole1" vmsize="Standard_D1_v2">
+  <WorkerRole name="EntityHandlerBlue" vmsize="Standard_D1_v2">
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
+    </ConfigurationSettings>
+  </WorkerRole>
+  <WorkerRole name="EntityHandlerGreen" vmsize="Standard_D1_v2">
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
     </ConfigurationSettings>

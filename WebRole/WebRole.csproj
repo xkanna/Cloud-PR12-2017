@@ -58,6 +58,9 @@
     <Reference Include="Microsoft.Data.Services.Client, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Services.Client.5.7.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <Private>True</Private>
     </Reference>
@@ -151,6 +154,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IzmeneController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,6 +197,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Izmene\Izmene.cshtml" />
+    <Content Include="Views\Izmene\Ispisi.cshtml" />
+    <Content Include="Views\Izmene\Artists.cshtml" />
+    <Content Include="Views\Izmene\TimeSlots.cshtml" />
+    <Content Include="Views\Izmene\UpdateTimeSlots.cshtml" />
+    <Content Include="Views\Izmene\UpdateArtists.cshtml" />
+    <Content Include="Views\Izmene\UpdateStages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -210,6 +221,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StageData\StageData.csproj">
+      <Project>{88046b6f-2a0e-472e-b4a4-867e31eada68}</Project>
+      <Name>StageData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkerRole1\EntityHandlerBlue.csproj">
+      <Project>{184a2f48-ac79-4a1b-8075-9d54cce512eb}</Project>
+      <Name>EntityHandlerBlue</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

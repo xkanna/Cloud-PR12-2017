@@ -37,6 +37,14 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntityHandlerGreen\EntityHandlerGreen.csproj">
+      <Name>EntityHandlerGreen</Name>
+      <Project>{13144f22-a64b-4911-8afe-7524977f81c4}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>EntityHandlerGreen</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
     <ProjectReference Include="..\WebRole\WebRole.csproj">
       <Name>WebRole</Name>
       <Project>{e104dafd-6cdf-402b-9911-666c83ad362a}</Project>
@@ -45,22 +53,23 @@
       <RoleName>WebRole</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
-    <ProjectReference Include="..\WorkerRole1\WorkerRole1.csproj">
-      <Name>WorkerRole1</Name>
+    <ProjectReference Include="..\WorkerRole1\EntityHandlerBlue.csproj">
+      <Name>EntityHandlerBlue</Name>
       <Project>{184a2f48-ac79-4a1b-8075-9d54cce512eb}</Project>
       <Private>True</Private>
       <RoleType>Worker</RoleType>
-      <RoleName>WorkerRole1</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+      <RoleName>EntityHandlerBlue</RoleName>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="EntityHandlerGreenContent\" />
     <Folder Include="WebRoleContent\" />
-    <Folder Include="WorkerRole1Content\" />
+    <Folder Include="EntityHandlerBlueContent" />
   </ItemGroup>
   <ItemGroup>
+    <DiagnosticsConfiguration Include="EntityHandlerGreenContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="WebRoleContent\diagnostics.wadcfgx" />
-    <DiagnosticsConfiguration Include="WorkerRole1Content\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="EntityHandlerBlueContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

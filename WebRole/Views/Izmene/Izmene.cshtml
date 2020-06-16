@@ -1,0 +1,147 @@
+﻿@model global::StageData.Stage
+
+@{
+    /**/
+
+    ViewBag.Title = "Izmene";
+}
+
+<h2>Izmene</h2>
+
+<form action="~/Izmene/AddStage">
+    <div class="form-horizontal">
+        <h4>Add Stage</h4>
+
+
+        <label>Name:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="text" required name="Name" />
+            </div>
+
+        </div>
+
+        <label>Id:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="number" required name="Id" />
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="AddStage" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+<form action="~/Izmene/AddArtist">
+    <div class="form-horizontal">
+        <h4>Add Artist</h4>
+
+
+        <label>Name:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="text" required name="Name" />
+            </div>
+
+        </div>
+        <label>Surname:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="text" required name="Surname" />
+            </div>
+
+        </div>
+        <label>Genre:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="text" required name="Genre" />
+            </div>
+
+        </div>
+        <label>Id:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="number" required name="Id" />
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="submit" value="AddArtist" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    </form>
+<form action="~/Izmene/AddTimeSlot">
+    <div class="form-horizontal">
+        <h4>Add Time Slot</h4>
+
+        <label>Description:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="text" required name="Description" />
+            </div>
+
+        </div>
+        <label>From:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="datetime-local" required name="From" />
+            </div>
+
+        </div>
+        <label>To:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="datetime-local" required name="To" />
+            </div>
+
+        </div>
+        <label>Id:</label>
+        <div class="form-group">
+
+
+            <div class="col-md-10">
+                <input type="number" required name="Id" />
+            </div>
+
+        </div>
+
+        <div class="col-md-10">
+            <div class="btn">
+                <input type="submit" value="AddTimeSlot" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<StageData.TimeSlot>
+
+@{
+    ViewBag.Title = "TimeSlots";
+}
+
+<h2>TimeSlots</h2>
+
+<p>
+    @Html.ActionLink("Dodaj Nov", "Izmene")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PartitionKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RowKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.To)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.From)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartitionKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RowKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.To)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.From)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateTimeSlots", new { Id = item.RowKey }) |
+            @Html.ActionLink("Delete", "DeleteTimeSlot", new { Id=item.RowKey })
+        </td>
+    </tr>
+}
+
+</table>
